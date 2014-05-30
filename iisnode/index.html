@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"WINPHONEWORK-252-stderr-1401460436807.txt","computername":"WINPHONEWORK","pid":252,"type":"stderr","created":1401460436807},{"file":"WINPHONEWORK-3620-stderr-1401460434261.txt","computername":"WINPHONEWORK","pid":3620,"type":"stderr","created":1401460434261},{"file":"WINPHONEWORK-3708-stderr-1401460435576.txt","computername":"WINPHONEWORK","pid":3708,"type":"stderr","created":1401460435576},{"file":"WINPHONEWORK-4764-stderr-1401460432986.txt","computername":"WINPHONEWORK","pid":4764,"type":"stderr","created":1401460432986},{"file":"WINPHONEWORK-6972-stderr-1401460440651.txt","computername":"WINPHONEWORK","pid":6972,"type":"stderr","created":1401460440651},{"file":"WINPHONEWORK-7784-stderr-1401460439405.txt","computername":"WINPHONEWORK","pid":7784,"type":"stderr","created":1401460439405},{"file":"WINPHONEWORK-8148-stderr-1401460438118.txt","computername":"WINPHONEWORK","pid":8148,"type":"stderr","created":1401460438118},{"file":"WINPHONEWORK-900-stderr-1401460431500.txt","computername":"WINPHONEWORK","pid":900,"type":"stderr","created":1401460431500}];
+        var lastUpdated = 1401460440684;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>
