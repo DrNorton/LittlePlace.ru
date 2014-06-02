@@ -1,0 +1,5 @@
+15
+test
+Listening on port  \\.\pipe\1112142f-9e3a-4c8c-9503-e73473d7c999
+validate complete
+validate complete

@@ -1,30 +1,42 @@
 var http = require('http');
-var sql = require('mssql'); 
+var sql = require('mssql');
+config = require('./settings/config').config;
+var AuthRouter = require('./routers/auth_router').AuthRouter;
+var connect = require('connect');
+var express = require('express')
+  , app = express()
+  , port = process.env.PORT || 3000;
 
-var config = {
-    user: 'sa',
-    password: 'Rianon1990',
-    server: 'scarystories.cloudapp.net', // You can use 'localhost\\instance' to connect to named instance
-    database: 'ScaryStories'
-}
+app.use(connect.cookieParser());
+app.use(connect.session({ secret: 'your secret here'} ));
 
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'content_type': 'text/plain' });
+var authRouter = new AuthRouter(config);
+
+
+
+  app.get('/', function (req, res) {
+      res.send(config.user);
+  })
+
+  app.get('/user/:id', function (req, res) {
+      res.end(req.params.id);
+  });
+
+  app.get('/auth/:action', function (req, res) {
+      authRouter.route(req,res);
     
-    sql.connect(config, function (err) {
-        var request = new sql.Request();
-        var str = "";
-        request.query('select Id from CategoryDetail', function (err, recordset) {
-            for (i = 0; i < recordset.length; i++) {
-                str+=(recordset[i].Id.toString())+'\n';
-            }
-            res.end(str);
-        });
+     
+  });
 
-    });
+app.get('/get', function (req, res) {
+  res.send('Privet!')
+})
 
-}).listen(process.env.port || 8080);
+app.listen(port, function () {
+    console.log('Listening on port ', port);
+})
+
 
 
 
