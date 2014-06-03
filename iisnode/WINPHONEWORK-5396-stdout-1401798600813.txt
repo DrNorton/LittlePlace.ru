@@ -1,0 +1,5 @@
+{ authManager: { sqlManager: {}, passwordHelper: { saltLength: 9 } } }
+Listening on port  \\.\pipe\fcd96cd5-4d0b-4521-a856-65619cd6b5d2
+Success
+INSERT INTO [LittlePlace].[dbo].[Session] (SessionId, UserId,Created,EndLifeTime)   OUTPUT Inserted.SessionId VALUES (NEWID(),2,GETDATE(),dateadd(day,5,getdate()))
+[{"SessionId":"861F3395-2019-4D1D-BE02-4137F5318EF6"}]

@@ -13,7 +13,7 @@ Response.prototype.sendError = function(errorCode, errorNum) {
 };
 
 Response.prototype.sendResult = function(result) {
-    console.log(result);
+    //console.log(result);
     this.response.json({ errorCode:'0',errorMessage:'',result:result });
 };
 

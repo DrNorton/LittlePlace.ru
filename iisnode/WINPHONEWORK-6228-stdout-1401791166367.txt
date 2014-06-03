@@ -1,0 +1,2 @@
+Listening on port  \\.\pipe\38c71a2a-b48b-4060-be8c-567ddbb7bbd1
+validate complete

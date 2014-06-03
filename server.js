@@ -1,7 +1,8 @@
 var http = require('http');
 var sql = require('mssql');
-config = require('./settings/config').config;
+var config = require('./settings/config').config;
 var AuthRouter = require('./routers/auth_router').AuthRouter;
+var authRouter=new AuthRouter(config);;
 var connect = require('connect');
 var express = require('express')
   , app = express()
@@ -9,10 +10,6 @@ var express = require('express')
 
 app.use(connect.cookieParser());
 app.use(connect.session({ secret: 'your secret here'} ));
-
-
-var authRouter = new AuthRouter(config);
-
 
 
   app.get('/', function (req, res) {
@@ -25,8 +22,6 @@ var authRouter = new AuthRouter(config);
 
   app.get('/auth/:action', function (req, res) {
       authRouter.route(req,res);
-    
-     
   });
 
 app.get('/get', function (req, res) {
@@ -34,6 +29,8 @@ app.get('/get', function (req, res) {
 })
 
 app.listen(port, function () {
+    
+    console.log(authRouter);
     console.log('Listening on port ', port);
 })
 

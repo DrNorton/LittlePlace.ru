@@ -1,5 +1,5 @@
 var BaseRouter = require('./base_router').BaseRouter;
-var AuthManager=require('./authManager').AuthManager;
+var AuthManager=require('../managers/authManager').AuthManager;
 
 
 
@@ -15,21 +15,26 @@ AuthRouter.prototype._doRoute = function (action, params, response) {
 
     switch (action) {
         case 'validate':
-            this.authManager.validate(action, params, function (sessionId) {
-              response.sendResult(sessionId);
+            this.authManager.validate(action, params, function (result) {
+                response.sendResult(result);
             },
-            function (errorMessage) {
-                response.sendError(response,"BAD LOGIN",401);
+            function (errorMessage, errorCode) {
+                response.sendError(response, errorMessage, errorCode);
             });
-            response.sendResult("validate complete");
+
             break;
 
         case 'register':
-            response.sendResult("register complete");
+            this.authManager.register(action, params, function (result) {
+                  response.sendResult(result);
+            },function (errorMessage, errorCode) {
+                 response.sendError(response, errorMessage, errorCode);
+            });
+
             break;
 
         default:
-            response.sendError(response,"ERROR_ACTION_REQUEST",404);
+            response.sendError(response, "ERROR_ACTION_REQUEST", 404);
             break;
     }
 

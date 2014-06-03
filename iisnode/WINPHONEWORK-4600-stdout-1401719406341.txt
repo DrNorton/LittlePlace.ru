@@ -1,2 +1,0 @@
-test
-Listening on port  \\.\pipe\23120861-5950-4f0a-a5b4-d0b36a98ebd0

@@ -1,5 +1,0 @@
-adad
-15
-test
-Listening on port  \\.\pipe\555e53b3-0532-46d8-9847-30e6679b9d76
-validate complete

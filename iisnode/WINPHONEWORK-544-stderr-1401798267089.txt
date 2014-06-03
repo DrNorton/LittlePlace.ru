@@ -1,0 +1,12 @@
+Application has thrown an uncaught exception and is terminated:
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (http.js:660:11)
+    at ServerResponse.res.setHeader (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\node_modules\connect\lib\patch.js:129:22)
+    at ServerResponse.res.set.res.header (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\node_modules\express\lib\response.js:565:10)
+    at ServerResponse.res.send (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\node_modules\express\lib\response.js:134:12)
+    at ServerResponse.res.json (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\node_modules\express\lib\response.js:212:15)
+    at Response.sendError (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\routers\response.js:12:20)
+    at AuthRouter._doRoute (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\routers\auth_router.js:22:26)
+    at AuthManager.validate (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\managers\authManager.js:27:17)
+    at SqlManager.invoke (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\managers\sqlManager.js:17:21)
+    at Request.query (C:\Users\WinPhone\Documents\My Web Sites\LittlePlace.ru\node_modules\mssql\lib\main.js:1045:51)

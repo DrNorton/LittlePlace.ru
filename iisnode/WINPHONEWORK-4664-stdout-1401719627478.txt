@@ -1,4 +1,0 @@
-15
-test
-Listening on port  \\.\pipe\d9dccf19-aa34-4067-b8b0-6cb6f67dd6fe
-validate complete
