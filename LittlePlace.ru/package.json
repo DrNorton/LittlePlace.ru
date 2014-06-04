@@ -1,0 +1,17 @@
+{
+  "name": "LittlePlace.ru",
+  "version": "0.0.0",
+  "description": "LittlePlace.ru",
+  "main": "server.js",
+  "author": {
+    "name": "WinPhone",
+    "email": ""
+  },
+  "dependencies": {
+    "connect": "^2.19.3",
+    "cookie-parser": "^1.1.0",
+    "crypto": "0.0.3",
+    "express": "^4.4.1",
+    "mssql": "^0.5.3"
+  }
+}
