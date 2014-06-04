@@ -1,2 +1,0 @@
-Listening on port  \\.\pipe\b14b67c9-08f8-4e7c-9017-b05bd3b83c0b
-validate complete

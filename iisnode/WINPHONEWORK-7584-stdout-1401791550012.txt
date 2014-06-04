@@ -1,2 +1,0 @@
-undefined
-Listening on port  \\.\pipe\9e7cd28e-011e-48b0-8bab-4ed7eeccee9a

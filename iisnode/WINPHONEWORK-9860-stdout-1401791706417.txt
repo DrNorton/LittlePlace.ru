@@ -1,3 +1,0 @@
-undefined
-Listening on port  \\.\pipe\44c11a79-a1f3-4858-a975-2c77d1fbc0cb
-validate complete

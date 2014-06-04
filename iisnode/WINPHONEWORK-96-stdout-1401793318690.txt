@@ -1,3 +1,0 @@
-{ authManager: { sqlManager: {}, passwordHelper: { saltLength: 9 } } }
-Listening on port  \\.\pipe\deecd005-b54f-4c66-a2f5-14d7409e2b02
-validate complete
