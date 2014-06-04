@@ -1,0 +1,4 @@
+{ authManager: { sqlManager: {}, passwordHelper: { saltLength: 9 } } }
+Listening on port  \\.\pipe\20c5522f-eb7d-4962-8923-de8198c46cde
+INSERT INTO [LittlePlace].[dbo].[User] (Login,Pass) OUTPUT Inserted.UserId VALUES ('DrNortons','kUexPRs8P5a346ab0c12778240e1a6585dfaf6846')
+[ { UserId: '3' } ]
