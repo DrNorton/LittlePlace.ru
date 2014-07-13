@@ -5,11 +5,18 @@ var AuthRouter = require('./routers/auth_router').AuthRouter;
 var PositionRouter = require("./routers/position_router").PositionRouter;
 var UserRouter = require("./routers/user_router").UserRouter;
 var UploadRouter = require("./routers/upload_router").UploadRouter;
+var NewsRouter = require("./routers/news_router").NewsRouter;
+var EventRouter = require("./routers/event_router").EventRouter;
+var MessageRouter = require("./routers/message_router").MessageRouter;
+
 
 var authRouter = new AuthRouter(config);
 var positionRouter = new PositionRouter(config);
 var userRouter = new UserRouter(config);
 var uploadRouter = new UploadRouter(config);
+var newsRouter = new NewsRouter(config);
+var eventRouter = new EventRouter(config);
+var messageRouter = new MessageRouter(config);
 
 var fs = require('fs');
 
@@ -20,7 +27,7 @@ var express = require('express')
 
 app.use(connect.cookieParser());
 app.use(connect.session({ secret: 'your secret here', maxAge: 24 * 60 * 60 * 1000, cookie: { httpOnly: false } }));
-app.use(connect.bodyParser({ uploadDir: './uploads' }));
+app.use(connect.bodyParser());
 
 
 app.get('/', function(req, res) {
@@ -41,6 +48,10 @@ app.get('/position/:action', function (req, res) {
     }
 });
 
+app.get('/news/:action', function (req, res) {
+    newsRouter.route(req, res);
+});
+
 app.get('/user/:action', function (req, res) {
     if (!req.session.authorized) {
         res.end(OnError(401, "You must be autorized"));
@@ -49,14 +60,26 @@ app.get('/user/:action', function (req, res) {
     }
 });
 
+app.get('/message/:action', function (req, res) {
+    if (!req.session.authorized) {
+        res.end(OnError(401, "You must be autorized"));
+    } else {
+        messageRouter.route(req, res);
+    }
+});
+
+app.get('/events/:action', function (req, res) {
+    if (!req.session.authorized) {
+        res.end(OnError(401, "You must be autorized"));
+    } else {
+        eventRouter.route(req, res);
+    }
+});
+
 app.get('/images/avatars/:file', function (req, res) {
-    if (req.session.authorized) {
         var img = fs.readFileSync('./images/avatars/' + req.params.file);
         res.writeHead(200, { 'Content-Type': 'image/jpg' });
         res.end(img, 'binary');
-    } else {
-        userRouter.route(req, res);
-    }
 });
 
 app.listen(port, function() {
@@ -64,14 +87,18 @@ app.listen(port, function() {
     console.log('Listening on port ', port);
 });
 
-app.get('/file-upload', function (req, res) {
-    res.end('<html><form method="post" enctype="multipart/form-data" action="/file-upload/addavatar"> \
-    <input type="file" name="thumbnail"> \
-    <input type="submit">\
-</form></html>');
+
+
+app.get('/upload', function (req, res) {
+    res.send(
+    '<form action="/upload/addavatar" method="post" enctype="multipart/form-data">' +
+    '<input type="file" name="thumbnail" />' +
+    '<input type="submit" value="Upload" />' +
+    '</form>'
+    );
 });
 
-app.post('/file-upload/:action', function (req, res, next) {
+app.post('/upload/:action', function (req, res) {
     uploadRouter.route(req, res);
 });
 

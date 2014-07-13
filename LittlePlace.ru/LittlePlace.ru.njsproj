@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="managers\authManager.js" />
+    <Compile Include="managers\messageManager.js" />
     <Compile Include="managers\newsManager.js" />
     <Compile Include="managers\passwordHelper.js" />
     <Compile Include="managers\positionManager.js" />
@@ -41,6 +42,7 @@
     <Compile Include="routers\base_router.js" />
     <Compile Include="managers\eventManager.js" />
     <Compile Include="routers\event_router.js" />
+    <Compile Include="routers\message_router.js" />
     <Compile Include="routers\news_router.js" />
     <Compile Include="routers\position_router.js" />
     <Compile Include="routers\response.js" />

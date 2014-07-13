@@ -7,6 +7,7 @@ var UserRouter = require("./routers/user_router").UserRouter;
 var UploadRouter = require("./routers/upload_router").UploadRouter;
 var NewsRouter = require("./routers/news_router").NewsRouter;
 var EventRouter = require("./routers/event_router").EventRouter;
+var MessageRouter = require("./routers/message_router").MessageRouter;
 
 
 var authRouter = new AuthRouter(config);
@@ -15,6 +16,7 @@ var userRouter = new UserRouter(config);
 var uploadRouter = new UploadRouter(config);
 var newsRouter = new NewsRouter(config);
 var eventRouter = new EventRouter(config);
+var messageRouter = new MessageRouter(config);
 
 var fs = require('fs');
 
@@ -55,6 +57,14 @@ app.get('/user/:action', function (req, res) {
         res.end(OnError(401, "You must be autorized"));
     } else {
         userRouter.route(req, res);
+    }
+});
+
+app.get('/message/:action', function (req, res) {
+    if (!req.session.authorized) {
+        res.end(OnError(401, "You must be autorized"));
+    } else {
+        messageRouter.route(req, res);
     }
 });
 

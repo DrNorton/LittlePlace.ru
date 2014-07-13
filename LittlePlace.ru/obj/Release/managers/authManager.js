@@ -28,6 +28,27 @@ AuthManager.prototype.logon = function(params, onSuccess, onError) {
 
 };
 
+AuthManager.prototype.changepassword = function (params, userId, onSuccess, onError) {
+    var self = this;
+    var oldpass = params.oldpass;
+    var newpass = params.newpass;
+    FindLoginByUserId(userId, function (result) {
+        var md5PassFromBase = result[0].Pass;
+      
+        var validateResult = self.passwordHelper.validateHash(md5PassFromBase, oldpass);
+        if (validateResult) {
+            //Добавим sessionId
+            ChangePassword(userId, newpass, onSuccess, onError, self.sqlManager,self.passwordHelper);
+        } else {
+            onError("Bad Old Pass", 401);
+        }
+    }, function () {
+        onError("Bad Login", 401);
+    }, onError, self.sqlManager);
+
+};
+                
+
 
 AuthManager.prototype.register = function(params, onSuccess, onError) {
     var self = this;
@@ -50,8 +71,9 @@ AuthManager.prototype.updatePhoto = function (userId, photoUrl, params, onSucces
 };
 
 
-function FindLogin(login,onSuccess,onFail,onError,sqlManager){
-    sqlManager.invoke('Select * from [LittlePlace].[dbo].[User] where Login=' + "'" + login + "'", function (result) {
+function FindLogin(login, onSuccess, onFail, onError, sqlManager) {
+
+    sqlManager.invoke('Select * from [littleplace_db].[dbo].[User] where Login=' + "'" + login + "'", function (result) {
         if (result.length == 0) {
             onFail();
         }
@@ -62,8 +84,35 @@ function FindLogin(login,onSuccess,onFail,onError,sqlManager){
     }, onError);
 };
 
+function FindLoginByUserId(userId, onSuccess, onFail, onError, sqlManager) {
+
+    sqlManager.invoke('Select * from [littleplace_db].[dbo].[User] where UserId=' + "'" + userId + "'", function (result) {
+        if (result.length == 0) {
+            onFail();
+        }
+        else {
+            onSuccess(result);
+        }
+
+    }, onError);
+};
+
+function ChangePassword(userId, newPass, onSuccess, onError, sqlManager, passwordHelper) {
+    var md5hash = passwordHelper.createHash(newPass);
+    var query = "Update [littleplace_db].[dbo].[User] Set Pass='" + md5hash + "'" + " where UserId=" + userId;
+    sqlManager.invoke(query, function (result) {
+        if (result.length == 0) {
+            onError(404,"Не найден логин");
+        }
+        else {
+            onSuccess(result);
+        }
+
+    }, onError);
+};
+
 function UpdateAvatar(userId, url, onSuccess, onError, sqlManager) {
-    var query = "Update [LittlePlace].[dbo].[User] Set Photo='" + url + "'" + " where UserId=" + userId;
+    var query = "Update [littleplace_db].[dbo].[User] Set Photo='" + url + "'" + " where UserId=" + userId;
     sqlManager.invoke(query, function (result) {
         if (result.length == 0) {
             onFail();
@@ -77,7 +126,7 @@ function UpdateAvatar(userId, url, onSuccess, onError, sqlManager) {
 
 function InsertLogin(login,pass,onError,onSuccess,sqlManager,passwordHelper){
      var md5hash = passwordHelper.createHash(pass);
-     var query = "INSERT INTO [LittlePlace].[dbo].[User] (Login,Pass) OUTPUT Inserted.UserId VALUES ('" + login + "','" + md5hash + "')";
+     var query = "INSERT INTO [littleplace_db].[dbo].[User] (Login,Pass) OUTPUT Inserted.UserId VALUES ('" + login + "','" + md5hash + "')";
      sqlManager.invoke(query,onSuccess,onError);
     
 };

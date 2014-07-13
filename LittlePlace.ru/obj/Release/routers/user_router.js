@@ -20,8 +20,30 @@ UserRouter.prototype._doRoute = function (action, params, response, req) {
       
             break;
 
-        case 'getallusers':
-           
+        case 'getme':
+            this.userAndFriendManager.getme(params, userId, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+
+            break;
+
+        case 'getbyid':
+            this.userAndFriendManager.getbyid(params, userId, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+
+            break;
+
+        case 'updateme':
+            this.userAndFriendManager.updateme(params, userId, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
             break;
 
         case 'addfriend':

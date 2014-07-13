@@ -13,12 +13,22 @@ AuthRouter.prototype = new BaseRouter();
 
 AuthRouter.prototype._doRoute = function (action, params, response, req) {
     var self = this;
+    var userId = req.session.userId;
     switch (action) {
         case 'logon':
             this.authManager.logon(params, function (login,userId) {
                 req.session.authorized = true;
                 req.session.username = login;
                 req.session.userId=userId;
+                response.sendResult(login);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+
+            break;
+
+        case 'changepassword':
+            this.authManager.changepassword(params,userId, function (login, userId) {
                 response.sendResult(login);
             }, function (errorMessage, code) {
                 self._sendError(response, errorMessage, code);

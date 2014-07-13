@@ -6,7 +6,7 @@ var Response = function(response) {
 Response.prototype.sendError = function(errorMessage, errorCode) {
     console.log(errorCode);
     if (!errorCode)
-        errorNum=500;
+        errorCode = 0;
     //this.response.json(errorNum,{ status:'error', message:errorCode });
  
      this.response.json({ errorCode:errorCode,errorMessage:errorMessage,result:"" });

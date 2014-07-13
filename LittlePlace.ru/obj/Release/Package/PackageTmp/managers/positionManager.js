@@ -45,41 +45,41 @@ PositionManager.prototype.getFriendPosition = function (params, userId, onSucces
 };
 
 function GetFriendPositionId(friendId, sqlManager, onSuccess, onError) {
-    var query = format("Select LastPosition from [LittlePlace].[dbo].[User] where UserId={0}", friendId);
+    var query = format("Select LastPosition from [littleplace_db].[dbo].[User] where UserId={0}", friendId);
     sqlManager.invoke(query, onSuccess, onError);
 };
 
 function GetFriendPositionById(positionId,sqlManager,onSuccess,onError) {
-    var query = format("Select Latitude,Longitude,Time,Description from [LittlePlace].[dbo].[Position] where PositionId={0}", positionId);
+    var query = format("Select Latitude,Longitude,Time,Description from [littleplace_db].[dbo].[Position] where PositionId={0}", positionId);
     sqlManager.invoke(query, onSuccess, onError);
 };
 
 function InsertMyPosition(latitude,longitude,userId,sqlManager,onSuccess,onError) {
-    var query = format("INSERT INTO [LittlePlace].[dbo].[Position] (Latitude,Longitude,Time,Description) OUTPUT Inserted.PositionId VALUES ('{0}','{1}',{2},'empty')", latitude, longitude, "GETDATE()");
+    var query = format("INSERT INTO [littleplace_db].[dbo].[Position] (Latitude,Longitude,Time,Description) OUTPUT Inserted.PositionId VALUES ('{0}','{1}',{2},'empty')", latitude, longitude, "GETDATE()");
     sqlManager.invoke(query, onSuccess,onError);
 };
 
 function CheckFriendInFriendsList(userId,friendId,onSuccess,onError,sqlManager) {
-    var query = format("Select * from [LittlePlace].[dbo].[FriendLink] where OwnerId={0} And FriendId={1}", userId,friendId);
+    var query = format("Select * from [littleplace_db].[dbo].[FriendLink] where OwnerId={0} And FriendId={1}", userId,friendId);
     sqlManager.invoke(query, onSuccess, onError);
 }
 
 function GetFriendsList(userId, onSuccess, onError, sqlManager) {
-    var query = format('Select UserId as FriendId,Latitude,Longitude,Description from [LittlePlace].[dbo].[FriendLink] as link Inner join [LittlePlace].[dbo].[User] as us \
+    var query = format('Select UserId as FriendId,Latitude,Longitude,Description from [littleplace_db].[dbo].[FriendLink] as link Inner join [littleplace_db].[dbo].[User] as us \
 on link.FriendId=us.UserId \
-Inner join [LittlePlace].[dbo].[Position] as pos \
+Inner join [littleplace_db].[dbo].[Position] as pos \
 on us.LastPosition=pos.PositionId \
  where OwnerId={0}',userId);
     sqlManager.invoke(query, onSuccess, onError);
 }
 
 function AddPositionToPositionsHistory(positionId,userId,sqlManager,onSuccess,onError) {
-    var query = format("INSERT INTO [LittlePlace].[dbo].[PositionHistory] (UserId,PositionId,Created) OUTPUT Inserted.PositionHistoryId VALUES ('{0}','{1}',{2})", userId, positionId, "GETDATE()");
+    var query = format("INSERT INTO [littleplace_db].[dbo].[PositionHistory] (UserId,PositionId,Created) OUTPUT Inserted.PositionHistoryId VALUES ('{0}','{1}',{2})", userId, positionId, "GETDATE()");
     sqlManager.invoke(query, onSuccess, onError);
 };
 
 function UpdateUserLastPosition(userId, lastPositionId, sqlManager, onSuccess, onError) {
-    var query = format("UPDATE [LittlePlace].[dbo].[User] SET LastPosition={0} WHERE UserId={1}", lastPositionId,userId);
+    var query = format("UPDATE [littleplace_db].[dbo].[User] SET LastPosition={0} WHERE UserId={1}", lastPositionId,userId);
     sqlManager.invoke(query, onSuccess, onError);
 };
 
