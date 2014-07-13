@@ -5,6 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>LittlePlace.ru</Name>
     <RootNamespace>LittlePlace.ru</RootNamespace>
+    <NameOfLastUsedPublishProfile>littleplace - FTP</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -31,23 +32,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="managers\authManager.js" />
+    <Compile Include="managers\newsManager.js" />
     <Compile Include="managers\passwordHelper.js" />
     <Compile Include="managers\positionManager.js" />
     <Compile Include="managers\sqlManager.js" />
     <Compile Include="managers\userAndFriendManager.js" />
     <Compile Include="routers\auth_router.js" />
     <Compile Include="routers\base_router.js" />
+    <Compile Include="managers\eventManager.js" />
+    <Compile Include="routers\event_router.js" />
+    <Compile Include="routers\news_router.js" />
     <Compile Include="routers\position_router.js" />
     <Compile Include="routers\response.js" />
+    <Compile Include="routers\upload_router.js" />
     <Compile Include="routers\user_router.js" />
     <Compile Include="server.js" />
     <Compile Include="settings\config.js" />
+    <None Include="littleplace - Web Deploy.pubxml" />
+    <None Include="littleplace - FTP.pubxml" />
+    <Content Include="Web.config" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="helpers\" />
+    <Folder Include="images\avatars\" />
     <Folder Include="managers\" />
+    <Folder Include="images\" />
+    <Folder Include="uploads\" />
     <Folder Include="routers\" />
     <Folder Include="settings\" />
   </ItemGroup>
