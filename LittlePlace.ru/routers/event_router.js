@@ -51,6 +51,14 @@ EventRouter.prototype._doRoute = function (action, params, response, req) {
             });
             break;
 
+        case 'getfriendsfromevent':
+            this.eventManager.getFriendsFromEvent(userId, params, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+            break;
+
       
         default:
 

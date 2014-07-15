@@ -12,6 +12,7 @@ EventManager.prototype.addEvent = function (userId,params, onSuccess, onError) {
          userId,
          params.address,
          params.description,
+         params.imageurl,
          onSuccess, onError, self.sqlManager);
 };
 
@@ -27,6 +28,13 @@ EventManager.prototype.addFriendsToEvent = function (userId, params, onSuccess, 
          onSuccess, onError, self.sqlManager);
 };
 
+EventManager.prototype.getFriendsFromEvent = function (userId, params, onSuccess, onError) {
+    var self = this;
+    GetFriendsFromEvent(params.eventId,
+         onSuccess, onError, self.sqlManager);
+};
+
+
 EventManager.prototype.getMyOwnEvents = function (userId, onSuccess, onError) {
     var self = this;
     GetMyOwnEvents(userId,onSuccess, onError, self.sqlManager);
@@ -37,9 +45,9 @@ EventManager.prototype.getMyInvitedEvents = function (userId, params, onSuccess,
     GetMyInvitedEvents(userId, onSuccess, onError, self.sqlManager);
 };
 
-function AddEvent(name,eventTime,latitude,longitude,ownerId,address,description,onSuccess, onError, sqlManager) {
+function AddEvent(name,eventTime,latitude,longitude,ownerId,address,description,imageUrl,onSuccess, onError, sqlManager) {
    
-    var query = format("Insert into [littleplace_db].[dbo].[Event] (Name,Created,EventTime,Latitude,Longitude,OwnerId,Address,Description) OUTPUT Inserted.EventId Values ('{0}',{1},{2},{3},{4},{5},N'{6}',N'{7}')  ", name, "GETDATE()", "GETDATE()", latitude, longitude, ownerId, address, description);
+    var query = format("Insert into [littleplace_db].[dbo].[Event] (Name,Created,EventTime,Latitude,Longitude,OwnerId,Address,Description,ImageUrl) OUTPUT Inserted.EventId Values ('{0}',{1},{2},{3},{4},{5},N'{6}',N'{7}',{8})  ", name, "GETDATE()", "GETDATE()", latitude, longitude, ownerId, address, description,imageUrl);
     sqlManager.invoke(query, onSuccess, onError);
 }
 
@@ -68,8 +76,13 @@ function GetMyOwnEvents(myId,onSuccess, onError, sqlManager) {
     sqlManager.invoke(query, onSuccess, onError);
 }
 
+function GetFriendsFromEvent(eventId, onSuccess, onError, sqlManager) {
+    var query = format('Select *  from [littleplace_db].[dbo].[EventMember] Where EventId={0}', eventId);
+    sqlManager.invoke(query, onSuccess, onError);
+}
+
 function GetMyInvitedEvents(myId, onSuccess, onError, sqlManager) {
-    var query = format('Select * from [littleplace_db].[dbo].[Event] as link \
+    var query = format('Select link.EventId,ImageUrl,Name,Created,EventTime,Latitude,longitude,OwnerId,Address,Description,Id,MemberId  from [littleplace_db].[dbo].[Event] as link  \
     Inner join [littleplace_db].[dbo].[EventMember] as us on link.EventId=us.EventId \
     where us.MemberId={0}',myId);
     sqlManager.invoke(query, onSuccess, onError);

@@ -24,7 +24,27 @@ MessageRouter.prototype._doRoute = function (action, params, response, req) {
             break;
 
         case 'getmessagesfromevent':
-            
+            this.messageManager.GetMessagesFromEvent(params, login, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+            break;
+
+        case 'sentprivatemessage':
+            this.messageManager.SentPrivateMessage(userId,params, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
+            break;
+
+        case 'getmyprivatemessages':
+            this.messageManager.GetMyPrivateMessages(userId,params, function (result) {
+                response.sendResult(result);
+            }, function (errorMessage, code) {
+                self._sendError(response, errorMessage, code);
+            });
             break;
 
 

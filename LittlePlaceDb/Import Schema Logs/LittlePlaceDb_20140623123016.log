@@ -1,0 +1,76 @@
+23.06.2014 16:30:16	This log contains information about the import schema operation into project 'LittlePlaceDb' on computer 'WINPHONEWORK' by user 'WinPhone'.
+23.06.2014 16:30:16	Import of database schema has started.
+23.06.2014 16:31:26	Gathering database options
+23.06.2014 16:31:26	Gathering users
+23.06.2014 16:31:26	Gathering roles
+23.06.2014 16:31:26	Gathering application roles
+23.06.2014 16:31:26	Gathering role memberships
+23.06.2014 16:31:26	Gathering filegroups
+23.06.2014 16:31:26	Gathering full-text catalogs
+23.06.2014 16:31:26	Gathering assemblies
+23.06.2014 16:31:26	Gathering certificates
+23.06.2014 16:31:26	Gathering asymmetric keys
+23.06.2014 16:31:26	Gathering symmetric keys
+23.06.2014 16:31:26	Gathering encrypted symmetric keys
+23.06.2014 16:31:26	Gathering schemas
+23.06.2014 16:31:29	Gathering XML schema collections
+23.06.2014 16:31:29	Gathering user-defined data types
+23.06.2014 16:31:29	Gathering user-defined types
+23.06.2014 16:31:29	Gathering table types
+23.06.2014 16:31:29	Gathering unique keys for table types
+23.06.2014 16:31:29	Gathering primary keys for table types
+23.06.2014 16:31:29	Gathering check constraints for table types
+23.06.2014 16:31:29	Gathering default constraints for table types
+23.06.2014 16:31:29	Gathering partition functions
+23.06.2014 16:31:29	Gathering partition schemes
+23.06.2014 16:31:29	Gathering functions
+23.06.2014 16:31:29	Gathering encrypted functions
+23.06.2014 16:31:29	Gathering aggregates
+23.06.2014 16:31:29	Gathering procedures
+23.06.2014 16:31:29	Gathering encrypted procedures
+23.06.2014 16:31:29	Gathering tables
+23.06.2014 16:31:29	Gathering primary keys
+23.06.2014 16:31:29	Gathering unique constraints
+23.06.2014 16:31:29	Gathering foreign keys
+23.06.2014 16:31:29	Gathering default constraints
+23.06.2014 16:31:29	Gathering check constraints
+23.06.2014 16:31:29	Gathering views
+23.06.2014 16:31:29	Gathering encrypted views
+23.06.2014 16:31:29	Gathering indexes
+23.06.2014 16:31:29	Gathering statistics
+23.06.2014 16:31:29	Gathering full-text index stoplists
+23.06.2014 16:31:29	Gathering search property lists
+23.06.2014 16:31:29	Gathering search properties
+23.06.2014 16:31:29	Gathering full-text indexes
+23.06.2014 16:31:29	Gathering column store indexes
+23.06.2014 16:31:29	Gathering spatial indexes
+23.06.2014 16:31:29	Gathering XML indexes
+23.06.2014 16:31:29	Gathering encrypted triggers
+23.06.2014 16:31:29	Gathering triggers
+23.06.2014 16:31:29	Gathering encrypted and clr ddl triggers
+23.06.2014 16:31:29	Gathering ddl triggers
+23.06.2014 16:31:29	Gathering synonyms
+23.06.2014 16:31:29	Gathering defaults
+23.06.2014 16:31:29	Gathering data constraint uddt bindings
+23.06.2014 16:31:29	Gathering rules
+23.06.2014 16:31:29	Gathering data constraint uddt bindings
+23.06.2014 16:31:29	Gathering message types
+23.06.2014 16:31:29	Gathering queues
+23.06.2014 16:31:29	Gathering contracts
+23.06.2014 16:31:29	Gathering services
+23.06.2014 16:31:29	Gathering event notifications
+23.06.2014 16:31:29	Gathering remote service bindings
+23.06.2014 16:31:29	Gathering broker priorities
+23.06.2014 16:31:29	Gathering signatures
+23.06.2014 16:31:29	Gathering data compression options
+23.06.2014 16:31:29	Gathering sequence types
+23.06.2014 16:31:29	Gathering database permissions
+23.06.2014 16:31:30	Gathering extended properties
+23.06.2014 16:31:32	Gathering credentials
+23.06.2014 16:31:32	Gathering logins
+23.06.2014 16:31:32	Gathering server audits
+23.06.2014 16:31:40	Scanning project for duplicate elements
+23.06.2014 16:31:41	Finished duplicate element processing
+23.06.2014 16:31:41	Finished importing database.
+23.06.2014 16:31:41	A summary of the import was saved to the following location: C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\Import Schema Logs\LittlePlaceDb_20140623123016.log
+23.06.2014 16:31:41	Click Finish to continue...

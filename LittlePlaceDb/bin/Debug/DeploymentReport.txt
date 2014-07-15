@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[FriendLink] (Table)
+       [dbo].[Position] (Table)
+       [dbo].[PositionHistory] (Table)
+       [dbo].[Session] (Table)
+       [dbo].[User] (Table)
+       [dbo].[FK_FriendLink_User] (Foreign Key)
+       [dbo].[FK_FriendLink_User1] (Foreign Key)
+       [dbo].[FK_PositionHistory_Position] (Foreign Key)
+       [dbo].[FK_PositionHistory_User] (Foreign Key)
+       [dbo].[FK_Session_User] (Foreign Key)
+       [dbo].[FK_User_LastPosition] (Foreign Key)
+       [dbo].[FK_User_Session] (Foreign Key)
+
+** Supporting actions

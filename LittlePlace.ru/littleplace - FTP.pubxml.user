@@ -17,31 +17,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="images/avatars/1403844990224.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/27/2014 12:02:01</publishTime>
     </File>
     <File Include="managers/authManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 13:59:25</publishTime>
     </File>
     <File Include="managers/eventManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 14:28:40</publishTime>
     </File>
     <File Include="managers/messageManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 17:11:19</publishTime>
     </File>
     <File Include="managers/newsManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/01/2014 01:47:22</publishTime>
     </File>
     <File Include="managers/passwordHelper.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/03/2014 15:03:54</publishTime>
     </File>
     <File Include="managers/positionManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2014 21:58:15</publishTime>
     </File>
     <File Include="managers/sqlManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/25/2014 18:03:29</publishTime>
     </File>
     <File Include="managers/userAndFriendManager.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/12/2014 18:19:31</publishTime>
     </File>
     <File Include="node_modules/body-parser/.npmignore">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3851,76 +3851,76 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="package.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/14/2014 12:17:48</publishTime>
     </File>
     <File Include="README.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/04/2014 15:32:09</publishTime>
     </File>
     <File Include="routers/auth_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/30/2014 18:40:28</publishTime>
     </File>
     <File Include="routers/base_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/05/2014 12:00:07</publishTime>
     </File>
     <File Include="routers/event_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/14/2014 18:18:57</publishTime>
     </File>
     <File Include="routers/message_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 16:53:39</publishTime>
     </File>
     <File Include="routers/news_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/30/2014 20:35:56</publishTime>
     </File>
     <File Include="routers/position_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/05/2014 12:03:14</publishTime>
     </File>
     <File Include="routers/response.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/12/2014 21:17:28</publishTime>
     </File>
     <File Include="routers/upload_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 14:09:47</publishTime>
     </File>
     <File Include="routers/user_router.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/30/2014 18:01:51</publishTime>
     </File>
     <File Include="server.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/15/2014 14:32:58</publishTime>
     </File>
     <File Include="settings/config.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2014 21:55:27</publishTime>
     </File>
     <File Include="uploads/10424-o44uyz.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:56:45</publishTime>
     </File>
     <File Include="uploads/12800-c9pzza.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 14:32:36</publishTime>
     </File>
     <File Include="uploads/12916-1ea754r.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 14:30:09</publishTime>
     </File>
     <File Include="uploads/13272-600b68.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:46:21</publishTime>
     </File>
     <File Include="uploads/13272-7t3o0y.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:45:41</publishTime>
     </File>
     <File Include="uploads/13272-y9ky98.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:45:12</publishTime>
     </File>
     <File Include="uploads/13520-11bhw8s.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:48:56</publishTime>
     </File>
     <File Include="uploads/4608-3yzqc8.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:41:35</publishTime>
     </File>
     <File Include="uploads/4608-tcmhg7.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:41:10</publishTime>
     </File>
     <File Include="uploads/8296-ml7p7j.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/09/2014 15:42:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/14/2014 17:17:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

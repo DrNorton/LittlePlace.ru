@@ -1,0 +1,9 @@
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\bin\Debug\LittlePlaceDb.dacpac
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\bin\Debug\LittlePlaceDb.dll
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\bin\Debug\LittlePlaceDb.pdb
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\Model.xml
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\refactor.xml
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\postdeploy.sql
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\predeploy.sql
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\LittlePlaceDb.dll
+C:\Users\WinPhone\Documents\Visual Studio 2013\Projects\LittlePlace.ru\LittlePlaceDb\obj\Debug\LittlePlaceDb.pdb
